@@ -55,10 +55,10 @@ export default function PlaygroundPage() {
         <div className="container flex flex-col items-start justify-between space-y-2 py-4 sm:flex-row sm:items-center sm:space-y-0 md:h-16">
           <h2 className="text-lg font-semibold">Playground</h2>
           <div className="ml-auto flex w-full space-x-2 sm:justify-end">
-            <PresetSelector presets={presets} />
+            {/* <PresetSelector presets={presets} /> */}
             <PresetSave />
             <div className="hidden space-x-2 md:flex">
-              <CodeViewer />
+              {/* <CodeViewer /> */}
               <PresetShare />
             </div>
             <PresetActions />
@@ -66,11 +66,11 @@ export default function PlaygroundPage() {
         </div>
         <Separator />
         <Tabs defaultValue="complete" className="flex-1">
-          <div className="container h-full py-6">
-            <div className="grid h-full items-stretch gap-6 md:grid-cols-[1fr_200px]">
+          <div className="container h-full py-6 ">
+            <div className="grid h-full items-stretch  ">
               <div className="hidden flex-col space-y-4 sm:flex md:order-2">
-                <div className="grid gap-2">
-                  <HoverCard openDelay={200}>
+                {/* <div className="grid gap-2"> */}
+                {/* <HoverCard openDelay={200}>
                     <HoverCardTrigger asChild>
                       <span className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                         Mode
@@ -244,30 +244,30 @@ export default function PlaygroundPage() {
                         ></path>
                       </svg>
                     </TabsTrigger>
-                  </TabsList>
-                </div>
-                <ModelSelector types={types} models={models} />
+                  </TabsList> */}
+                {/* </div> */}
+                {/* <ModelSelector types={types} models={models} />
                 <TemperatureSelector defaultValue={[0.56]} />
                 <MaxLengthSelector defaultValue={[256]} />
-                <TopPSelector defaultValue={[0.9]} />
+                <TopPSelector defaultValue={[0.9]} /> */}
               </div>
-              <div className="md:order-1">
-                <TabsContent value="complete" className="mt-0 border-0 p-0">
-                  <div className="flex h-full flex-col space-y-4">
-                    <Textarea
-                      placeholder="Write a tagline for an ice cream shop"
-                      className="min-h-[400px] flex-1 p-4 md:min-h-[700px] lg:min-h-[700px]"
-                    />
-                    <div className="flex items-center space-x-2">
-                      <Button>Submit</Button>
-                      <Button variant="secondary">
-                        <span className="sr-only">Show history</span>
-                        <CounterClockwiseClockIcon className="h-4 w-4" />
-                      </Button>
-                    </div>
+              <div className="md:order-1 ">
+                {/* <TabsContent value="complete" className="mt-0 border-0 p-0"> */}
+                <div className="flex h-full  flex-col space-y-4">
+                  <Textarea
+                    placeholder="Insert freemarket file content here..."
+                    className="min-h-[400px]flex-1 p-4 md:min-h-[700px] lg:min-h-[700px]"
+                  />
+                  <div className="flex items-center space-x-2">
+                    <Button>Submit</Button>
+                    <Button variant="secondary">
+                      <span className="sr-only">Show history</span>
+                      <CounterClockwiseClockIcon className="h-4 w-4" />
+                    </Button>
                   </div>
-                </TabsContent>
-                <TabsContent value="insert" className="mt-0 border-0 p-0">
+                </div>
+                {/* </TabsContent> */}
+                {/* <TabsContent value="insert" className="mt-0 border-0 p-0">
                   <div className="flex flex-col space-y-4">
                     <div className="grid h-full grid-rows-2 gap-6 lg:grid-cols-2 lg:grid-rows-1">
                       <Textarea
@@ -315,7 +315,7 @@ export default function PlaygroundPage() {
                       </Button>
                     </div>
                   </div>
-                </TabsContent>
+                </TabsContent> */}
               </div>
             </div>
           </div>
