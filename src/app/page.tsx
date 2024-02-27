@@ -39,6 +39,22 @@ export const metadata: Metadata = {
   title: "Playground",
   description: "The OpenAI Playground built using the components.",
 };
+const sampleData = [
+  {
+    input: {
+      "object 1": 19879,
+      "object 2": 13459,
+      "object 3": 25256,
+      "object 4": 34353,
+    },
+    output: {
+      "result 1": [0.1, 0.2, 0.3, 0.4],
+      "result 2": [0.1, 0.2, 0.3, 0.4],
+      "result 3": [0.1, 0.2, 0.3, 0.4],
+      "result 4": [0.1, 0.2, 0.3, 0.4],
+    },
+  },
+];
 
 export default function PlaygroundPage() {
   return (
@@ -277,12 +293,41 @@ export default function PlaygroundPage() {
                   </div>
                   <Card className="w-[400px] h-[700px] ml-4">
                     <CardHeader>
-                      <CardTitle className="text-sm-start text-gray-600 ">
-                        Freemarker Result{" "}
+                      <CardTitle className="text-sm-start text-gray-600">
+                        Freemarker Result
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p>Content</p>
+                      <ul>
+                        {sampleData.map((item, index) => (
+                          <li key={index}>
+                            <div className="mb-4">
+                              <strong className="text-blue-600">Input:</strong>
+                              <ul className="list-disc ml-4 mt-2 border-b border-gray-300">
+                                {Object.entries(item.input).map(
+                                  ([key, value]) => (
+                                    <li key={key}>{`${key}: ${value}`}</li>
+                                  )
+                                )}
+                              </ul>
+                            </div>
+                            <div className="mb-4 border-b border-gray-300">
+                              <strong className="text-green-600">
+                                Output:
+                              </strong>
+                              <ul className="list-disc ml-4 mt-2">
+                                {Object.entries(item.output).map(
+                                  ([key, value]) => (
+                                    <li key={key}>{`${key}: ${JSON.stringify(
+                                      value
+                                    )}`}</li>
+                                  )
+                                )}
+                              </ul>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
                     </CardContent>
                   </Card>
                 </div>
