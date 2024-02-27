@@ -26,6 +26,14 @@ import { TopPSelector } from "./components/top-p-selector";
 import { models, types } from "./data/models";
 import { presets } from "./data/presets";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Playground",
@@ -253,18 +261,30 @@ export default function PlaygroundPage() {
               </div>
               <div className="md:order-1 ">
                 {/* <TabsContent value="complete" className="mt-0 border-0 p-0"> */}
-                <div className="flex h-full  flex-col space-y-4">
-                  <Textarea
-                    placeholder="Insert freemarket file content here..."
-                    className="min-h-[400px]flex-1 p-4 md:min-h-[700px] lg:min-h-[700px]"
-                  />
-                  <div className="flex items-center space-x-2">
-                    <Button>Submit</Button>
-                    <Button variant="secondary">
-                      <span className="sr-only">Show history</span>
-                      <CounterClockwiseClockIcon className="h-4 w-4" />
-                    </Button>
+                <div className="flex h-full">
+                  <div className="flex-1 flex flex-col space-y-4">
+                    <Textarea
+                      placeholder="Insert freemarke file content here..."
+                      className="min-h-[400px] flex-1 p-4 md:min-h-[700px] lg:min-h-[700px]"
+                    />
+                    <div className="flex items-center space-x-2">
+                      <Button>Submit</Button>
+                      <Button variant="secondary">
+                        <span className="sr-only">Show history</span>
+                        <CounterClockwiseClockIcon className="h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
+                  <Card className="w-[400px] h-[700px] ml-4">
+                    <CardHeader>
+                      <CardTitle className="text-sm-start text-gray-600 ">
+                        Freemarker Result{" "}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p>Content</p>
+                    </CardContent>
+                  </Card>
                 </div>
                 {/* </TabsContent> */}
                 {/* <TabsContent value="insert" className="mt-0 border-0 p-0">
